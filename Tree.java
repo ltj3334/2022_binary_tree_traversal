@@ -5,16 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-class Node {
-    char data;
-    Node left;
-    Node right;
-    
-    Node(char data) {
-        this.data = data;
-    }
-}
-
 class Tree {
     Node root;
 
@@ -29,19 +19,21 @@ class Tree {
     }
 
     public static void preorder(Node root) {
+        System.out.print(root.data + " ");
         /*
-            코드 작성
+        코드 작성
         */
     }
     public static void postorder(Node root) {
         /*
-            코드 작성
+        코드 작성
         */
+        System.out.print(root.data + " ");
     }
     public static void inorder(Node root) {
-        /*
-            코드 작성
-        */
+        /* 코드 작성 */
+        System.out.print(root.data + " ");
+        /* 코드 작성 */
     }
 	public void insert(char d, char l, char r) {
         search(root.left, d, l, r);
@@ -75,11 +67,22 @@ class Tree {
             data = in.readLine().replaceAll(" ", "").toCharArray();
             tree.insert(data[0], data[1], data[2]);
         }
+        
         postorder(tree.root);
         System.out.println();
         inorder(tree.root);
         System.out.println();
         preorder(tree.root);
-    }	
+    }
+
 }
 
+class Node {
+    char data;
+    Node left;
+    Node right;
+    
+    Node(char data) {
+        this.data = data;
+    }
+}
